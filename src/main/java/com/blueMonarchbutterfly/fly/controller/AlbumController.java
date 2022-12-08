@@ -11,19 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping(value = AlbumController.PATH, produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/albums")
 @RequiredArgsConstructor
 public class AlbumController {
 
-    public static final String PATH = "// https://jsonplaceholder.typicode.com";
+    public static final String PATH = "// https://jsonplaceholder.typicode.com/albums";
 
         AlbumClient albumClient;
     @GetMapping("/albums")
     public ArrayList<Album> getMyAlbumsPlainJSON() {
         return albumClient.getAlbums();
     }
-
-
-
 
 }
